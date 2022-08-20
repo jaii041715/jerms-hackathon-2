@@ -55,11 +55,11 @@ class getStarted extends StatelessWidget {
                 ),
                 Container(
                     child: TextButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => const Login()));
-                      // Navigate back to first route when tapped.
-                    },
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Login()));
+                    // Navigate back to first route when tapped.
+                  },
                   child: Container(
                     margin: EdgeInsets.fromLTRB(32, 0, 32, 50),
                     padding: EdgeInsets.all(15),
