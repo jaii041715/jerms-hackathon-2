@@ -53,7 +53,7 @@ class Login extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const SetLocation()));
+                        builder: (context) => SetLocation()));
                 // Navigate back to first route when tapped.
               },
               child: Container(
@@ -80,7 +80,7 @@ class Login extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const SetLocation()));
+                        builder: (context) => SetLocation()));
                 // Navigate back to first route when tapped.
               },
               child: Container(
