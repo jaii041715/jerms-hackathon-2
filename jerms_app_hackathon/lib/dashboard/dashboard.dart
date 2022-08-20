@@ -29,7 +29,7 @@ class Dashboard extends StatelessWidget {
                     builder: (context) => const AccountSettings()
                   )
                 );
-              }, child:  const Text('Go to Account Settings'),
+              }, child:  const Text('Go to Account Settings!'),
             ),
             // Start Navigating
             ElevatedButton(
