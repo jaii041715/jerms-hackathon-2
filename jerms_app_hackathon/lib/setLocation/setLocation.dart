@@ -70,13 +70,28 @@ class SetLocation extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: TextButton(
         onPressed: () {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const Dashboard()));
         },
-        backgroundColor: Colors.green,
-        child: Text("NEXT"),
+        child: Container(
+          alignment: Alignment.bottomCenter,
+          margin: EdgeInsets.fromLTRB(32, 690, 0, 40),
+          padding: EdgeInsets.all(15),
+          width: double.infinity,
+          decoration: BoxDecoration(
+              color: Color(0xFFBAA1945),
+              borderRadius: BorderRadius.circular(5)),
+          child: Center(
+            child: Text("NEXT",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontFamily: 'Poppins Medium',
+                    letterSpacing: 2)),
+          ),
+        ),
       ),
     );
   }
