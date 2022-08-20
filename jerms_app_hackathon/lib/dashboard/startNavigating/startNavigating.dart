@@ -34,7 +34,7 @@ class StartNavigating extends StatelessWidget {
               onPressed: () {
                 Navigator.push(context,
                   MaterialPageRoute(
-                    builder: (context) => const Dashboard()
+                    builder: (context) => Dashboard()
                   )
                 );
               }, child:  const Text('Go back to Dashboard'),

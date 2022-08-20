@@ -18,7 +18,7 @@ class NavigateMallBluePrint extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.push(context,MaterialPageRoute(builder: (context) => const Dashboard()));
+            Navigator.push(context,MaterialPageRoute(builder: (context) => Dashboard()));
             // Navigate back to first route when tapped.
           },
           child: const Text('Go back!'),
