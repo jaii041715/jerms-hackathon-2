@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:jerms_app_hackathon/main.dart';
 import 'package:jerms_app_hackathon/setLocation/setLocation.dart';
 
-
 void main() {
   runApp(const Login());
 }
@@ -56,18 +55,17 @@ class Login extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (context) => const SetLocation()));
                 // Navigate back to first route when tapped.
-               },
+              },
               child: Container(
                 margin: EdgeInsets.fromLTRB(32, 0, 32, 5),
                 padding: EdgeInsets.all(10),
-                width: double.infinity,
                 decoration: BoxDecoration(
                     border: Border.all(
                       color: Color(0xFFBAA1945),
                     ),
                     borderRadius: BorderRadius.circular(5)),
                 child: Center(
-                  child: Text("SIGN IN AS GUEST", 
+                  child: Text("SIGN IN AS GUEST",
                       style: TextStyle(
                           color: Color(0xFFBAA1945),
                           fontSize: 14,
@@ -88,7 +86,6 @@ class Login extends StatelessWidget {
               child: Container(
                 margin: EdgeInsets.fromLTRB(32, 0, 32, 20),
                 padding: EdgeInsets.all(10),
-                width: double.infinity,
                 decoration: BoxDecoration(
                     color: Color(0xFFBAA1945),
                     borderRadius: BorderRadius.circular(5)),
@@ -137,7 +134,6 @@ class Login extends StatelessWidget {
               child: Container(
                 margin: EdgeInsets.fromLTRB(32, 20, 32, 5),
                 padding: EdgeInsets.all(10),
-                width: double.infinity,
                 decoration: BoxDecoration(
                     color: Color(0xFFB3A5998),
                     borderRadius: BorderRadius.circular(5)),
@@ -161,7 +157,6 @@ class Login extends StatelessWidget {
               child: Container(
                 margin: EdgeInsets.fromLTRB(32, 0, 32, 10),
                 padding: EdgeInsets.all(10),
-                width: double.infinity,
                 decoration: BoxDecoration(
                     color: Color(0xFFBFFFFFF),
                     borderRadius: BorderRadius.circular(5)),
