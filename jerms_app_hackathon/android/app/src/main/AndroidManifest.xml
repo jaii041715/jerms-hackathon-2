@@ -1,12 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jerms_app_hackathon">
-    <!-- TODO: Add your Google Maps API key here -->
-        <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyDzRESEwHjO8I8p6IQSuC3cnohNj7hMG90"/>
+    
    <application
         android:label="jerms_app_hackathon"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <!-- TODO: Add your Google Maps API key here -->
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyDzRESEwHjO8I8p6IQSuC3cnohNj7hMG90"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
