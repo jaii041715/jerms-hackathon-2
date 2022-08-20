@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jerms_app_hackathon/dashboard/dashboard.dart';
+import 'package:jerms_app_hackathon/dashboard/dashboard.dart';
 import 'package:jerms_app_hackathon/main.dart';
 
 void main() {

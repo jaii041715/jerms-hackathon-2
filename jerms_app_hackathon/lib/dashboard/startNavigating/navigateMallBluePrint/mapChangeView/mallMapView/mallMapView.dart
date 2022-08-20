@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jerms_app_hackathon/dashboard/dashboard.dart';
 import 'package:jerms_app_hackathon/dashboard/startNavigating/mallInfo/mallInfo.dart';
 import 'package:jerms_app_hackathon/dashboard/startNavigating/navigateMallBluePrint/mapChangeView/mallBluePrintView/mallBluePrintView.dart';
+import 'package:jerms_app_hackathon/dashboard/startNavigating/navigateMallBluePrint/mapChangeView/mapChangeView.dart';
 
 void main() {
   runApp(const MallMapView());
@@ -18,12 +19,29 @@ class MallMapView extends StatelessWidget {
         title: const Text('MallMapView'),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(context,MaterialPageRoute(builder: (context) => const MallBluePrintView()));
-            // Navigate back to first route when tapped.
-          },
-          child: const Text('Mall Blue Print View'),
+        child: Column(
+          children: <Widget>[
+            // Mall Blueprint View
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                  MaterialPageRoute(
+                    builder: (context) => const MallBluePrintView()
+                  )
+                );
+              }, child:  const Text('Select a Store'),
+            ),
+            // Map Change View
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                  MaterialPageRoute(
+                    builder: (context) => const MapChangeView()
+                  )
+                );
+              }, child:  const Text('Map Change View'),
+            ),
+          ],
         ),
       ),
     );
