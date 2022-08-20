@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jerms_app_hackathon/dashboard/dashboard.dart';
 import 'package:jerms_app_hackathon/dashboard/startNavigating/startNavigating.dart';
 
 void main() {
@@ -16,14 +17,31 @@ class MallInfo extends StatelessWidget {
         title: const Text('Mall Info'),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(context,MaterialPageRoute(builder: (context) => const StartNavigating()));
-            // Navigate back to first route when tapped.
-          },
-          child: const Text('Go to Start Navigating'),
+          child: Column(
+            children: <Widget>[
+              // Mall Map View
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                    MaterialPageRoute(
+                      builder: (context) => const StartNavigating()
+                    )
+                  );
+                }, child:  const Text('Start Navigating'),
+              ),
+              // Go Back to Dashboard!
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                    MaterialPageRoute(
+                      builder: (context) => const Dashboard()
+                    )
+                  );
+                }, child:  const Text('Go Back to Dashboard'),
+              ),
+            ]
+          )
         ),
-      ),
     );
   }
 }

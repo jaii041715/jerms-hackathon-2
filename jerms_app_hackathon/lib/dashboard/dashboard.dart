@@ -3,6 +3,7 @@ import 'package:jerms_app_hackathon/dashboard/accountSettings/accountSettings.da
 import 'package:jerms_app_hackathon/dashboard/startNavigating/mallInfo/mallInfo.dart';
 import 'package:jerms_app_hackathon/dashboard/startNavigating/startNavigating.dart';
 import 'package:jerms_app_hackathon/login/login.dart';
+import 'package:jerms_app_hackathon/setLocation/setLocation.dart';
 
 void main() {
   runApp(const Dashboard());
@@ -36,7 +37,7 @@ class Dashboard extends StatelessWidget {
               onPressed: () {
                 Navigator.push(context,
                   MaterialPageRoute(
-                    builder: (context) => const StartNavigating()
+                    builder: (context) => const MallInfo()
                   )
                 );
               }, child:  const Text('Start Navigating'),
@@ -56,10 +57,10 @@ class Dashboard extends StatelessWidget {
               onPressed: () {
                 Navigator.push(context,
                   MaterialPageRoute(
-                    builder: (context) => const MallInfo()
+                    builder: (context) => const SetLocation()
                   )
                 );
-              }, child:  const Text('View Map'),
+              }, child:  const Text('Update Set Location'),
             )
           ],
         ),
