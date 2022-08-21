@@ -25,8 +25,6 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     Color _color = const Color(0xFFBFFF7EB);
 
-
-    
     return Scaffold(
       appBar: AppBar(
         backgroundColor: _color,
@@ -35,7 +33,7 @@ class Dashboard extends StatelessWidget {
           style: TextStyle(
             fontSize: 16.0,
             fontFamily: 'Poppins Medium',
-            letterSpacing: 2,
+            letterSpacing: 1,
             color: Colors.black,
           ),
         ),
@@ -189,7 +187,7 @@ class Dashboard extends StatelessWidget {
 
             //Are you here?
             Container(
-              margin: const EdgeInsets.fromLTRB(0, 15, 15, 0),
+              margin: const EdgeInsets.fromLTRB(4, 0, 15, 0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -197,7 +195,7 @@ class Dashboard extends StatelessWidget {
                   textAlign: TextAlign.left,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                      fontSize: 16.0,
+                      fontSize: 20.0,
                       fontFamily: 'Poppins Medium',
                       letterSpacing: 1.5,
                       color: Colors.black),
@@ -207,48 +205,47 @@ class Dashboard extends StatelessWidget {
 
             // Current Mall You're In
             Card(
-                elevation: 0,
+                margin: EdgeInsets.zero,
+                clipBehavior: Clip.antiAlias,
                 shape: RoundedRectangleBorder(
-                  side: BorderSide(
-                    width: 330,
-                    color: Theme.of(context).colorScheme.outline,
-                  ),
-                  borderRadius: const BorderRadius.all(Radius.circular(3)),
+                  borderRadius: BorderRadius.circular(3.0),
                 ),
+                elevation: 0,
                 child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
-                        child: Image.asset("assets/images/Mall1.jpg",
-                            width: 200, height: 130, fit: BoxFit.cover),
+                        child: Image.asset(
+                          "assets/images/Mall1.2.jpg",
+                          height: 140,
+                        ),
+                        margin: EdgeInsets.only(right: 22, top: 5, left: 5),
                       ),
                       Container(
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Align(
                               alignment: Alignment.centerLeft,
                               child: Container(
-                                child: Text('Mall 1',
-                                    textAlign: TextAlign.left,
+                                margin: const EdgeInsets.only(top: 10),
+                                child: Text('Mall 3',
                                     style: TextStyle(
                                         fontFamily: 'Poppins Regular',
-                                        fontSize: 13,
-                                        color: Color(0xFFB757575))),
+                                        fontSize: 15,
+                                        color: Color(0xFFB343434))),
                               ),
                             ),
                             Container(
-                              margin: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+                              margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                               child: Text('Description',
-                                  textAlign: TextAlign.left,
                                   style: TextStyle(
                                       fontFamily: 'Poppins Regular',
-                                      fontSize: 11,
+                                      fontSize: 13,
                                       color:
                                           Color.fromARGB(250, 128, 128, 128))),
                             ),
                             Container(
-                                margin:
-                                    const EdgeInsets.fromLTRB(15, 15, 10, 2),
                                 height: 30,
                                 decoration: BoxDecoration(
                                     color: Color(0xFFBAA1945),
@@ -269,6 +266,7 @@ class Dashboard extends StatelessWidget {
                                           letterSpacing: 2,
                                         )))),
                             Container(
+                                margin: const EdgeInsets.only(left: 5, top: 0),
                                 child: TextButton(
                                     onPressed: () {
                                       Navigator.push(
@@ -279,6 +277,7 @@ class Dashboard extends StatelessWidget {
                                     },
                                     child: Text("CHECK MALL INFO",
                                         style: TextStyle(
+                                          height: 0.5,
                                           color: Color(0xFFBAA1945),
                                           fontSize: 9,
                                           fontFamily: 'Poppins Medium',
@@ -291,15 +290,15 @@ class Dashboard extends StatelessWidget {
 
             // Malls near you
             Container(
-              margin: const EdgeInsets.fromLTRB(0, 15, 15, 0),
+              margin: const EdgeInsets.fromLTRB(4, 15, 15, 0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Malls near you',
+                  'Malls Near You',
                   textAlign: TextAlign.left,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                      fontSize: 16.0,
+                      fontSize: 20.0,
                       fontFamily: 'Poppins Medium',
                       letterSpacing: 1.5,
                       color: Colors.black),
@@ -320,10 +319,11 @@ class Dashboard extends StatelessWidget {
                   ),
                   child: Column(children: [
                     Image.asset("assets/images/mallnearyou1.jpeg",
-                        width: 175, height: 150, fit: BoxFit.cover),
+                        width: 168, height: 150, fit: BoxFit.cover),
                   ]),
                 ),
                 Card(
+                  margin: const EdgeInsets.only(left: 8),
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                     side: BorderSide(
@@ -333,7 +333,7 @@ class Dashboard extends StatelessWidget {
                   ),
                   child: Column(children: [
                     Image.asset("assets/images/mallnearyou2.jpeg",
-                        width: 175, height: 150, fit: BoxFit.cover),
+                        width: 168, height: 150, fit: BoxFit.cover),
                   ]),
                 ),
               ],
@@ -341,6 +341,6 @@ class Dashboard extends StatelessWidget {
           ]))),
     );
   }
-  
+
   setState(Null Function() param0) {}
 }
