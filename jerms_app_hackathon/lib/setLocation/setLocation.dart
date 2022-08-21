@@ -12,7 +12,7 @@ import 'package:jerms_app_hackathon/main.dart';
 
 const LatLng SOURCE_LOCATION = LatLng(42.7477863, -71.1699932);
 const LatLng DEST_LOCATION = LatLng(42.744421, -71.1698939);
-const double CAMERA_ZOOM = 20;
+const double CAMERA_ZOOM = 50;
 const double CAMERA_TILT = 80;
 const double CAMERA_BEARING = 30;
 const double PIN_VISIBLE_POSITION = 20;
@@ -53,16 +53,18 @@ class _SetLocationState extends State<SetLocation> {
       circles.add(Circle(
           circleId: CircleId("nya"),
           center: LatLng(14.7649713, 120.9447974),
-          fillColor: Color.fromARGB(255, 198, 229, 255),
+          fillColor: Color.fromARGB(51, 198, 229, 255),
           radius: newVal,
           strokeColor: Color.fromARGB(255, 69, 170, 252),
           strokeWidth: 1));
     });
+    _markers.add(Marker(markerId: MarkerId("nya"),position: currentLocation,icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRose)));
   }
 
   @override
   void initState() {
     _initLocationService();
+    _setSliderAndRadius(newVal: 10);
     // TODO: implement initState
     super.initState();
   }
@@ -164,8 +166,7 @@ class _SetLocationState extends State<SetLocation> {
                                     circles.add(Circle(
                                         circleId: CircleId("nya"),
                                         center: LatLng(14.7649713, 120.9447974),
-                                        fillColor:
-                                            Color.fromARGB(255, 198, 229, 255),
+                                        fillColor: Color.fromARGB(51, 198, 229, 255),
                                         radius: newRating,
                                         strokeColor:
                                             Color.fromARGB(255, 69, 170, 252),
