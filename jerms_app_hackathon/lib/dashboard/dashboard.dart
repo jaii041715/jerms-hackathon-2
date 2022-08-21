@@ -11,6 +11,7 @@ import 'package:jerms_app_hackathon/notes/notes.dart';
 import 'package:jerms_app_hackathon/setLocation/setLocation.dart';
 import 'package:jerms_app_hackathon/social/social.dart';
 import 'package:jerms_app_hackathon/message/message.dart';
+import 'package:jerms_app_hackathon/notification/notification.dart';
 
 void main() {
   runApp(const Dashboard());
@@ -41,8 +42,13 @@ class Dashboard extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(Icons.notifications_none),
-            onPressed: () {},
-            color: Color(0xFFB322E2E),
+            onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const NotificationList()));
+                      },
+            color: Color(0xFFBAA1945),
           ),
         ],
       ),

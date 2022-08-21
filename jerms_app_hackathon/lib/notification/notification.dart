@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:jerms_app_hackathon/dashboard/dashboard.dart';
 
 void main() {
-  runApp(const Message());
+  runApp(const NotificationList());
 }
 
-class Message extends StatelessWidget {
-  const Message({super.key});
+class NotificationList extends StatelessWidget {
+  const NotificationList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +14,12 @@ class Message extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         backgroundColor: _color,
+        iconTheme: IconThemeData(
+          color: Color(0xFFBAA1945), //change your color here
+        ),
         title: const Text(
-          'Messages',
+          'Notification',
           style: TextStyle(
               fontSize: 16.0,
               fontFamily: 'Poppins Medium',
@@ -41,7 +43,7 @@ class Message extends StatelessWidget {
                 ),
                 child: Row(children: <Widget>[
                   Container(
-                    child: Image.asset("assets/images/message-1.png",
+                    child: Image.asset("assets/images/starbucksLogo.jpeg",
                         width: 60, height: 60, fit: BoxFit.cover),
                   ),
                   Container(
@@ -50,21 +52,21 @@ class Message extends StatelessWidget {
                       children: <Widget>[
                         Container(
                           margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: Text('H&M',
+                          child: Text('30% Discount at Starbucks',
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                   fontFamily: 'Poppins Bold',
-                                  fontSize: 20,
+                                  fontSize: 15,
                                   letterSpacing: 1,
                                   color: Color(0xFFB33140C))),
                         ),
                         Container(
                           margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: Text('Glad to see you again here at H&M!',
+                          child: Text('Enjoy your 30% discount on your first purchase!',
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                   fontFamily: 'Poppins Regular',
-                                  fontSize: 12,
+                                  fontSize: 9,
                                   letterSpacing: 1,
                                   color: Color.fromARGB(250, 128, 128, 128))),
                         ),
@@ -74,11 +76,11 @@ class Message extends StatelessWidget {
                   Container(
                       padding: const EdgeInsets.only(left: 10, top: 10),
                       child: Text(
-                        '3m ago',
+                        '1m ago',
                         textAlign: TextAlign.right,
                         style: TextStyle(
                             fontFamily: 'Poppins Bold',
-                            fontSize: 10,
+                            fontSize: 9,
                             letterSpacing: 1,
                             color: Color(0xFFB33140C)),
                       )),
@@ -100,7 +102,8 @@ class Message extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Container(
-                      child: Image.asset("assets/images/chandler.jpg",
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: Image.asset("assets/images/americanExpressLogo.png",
                           width: 60, height: 60, fit: BoxFit.cover),
                     ),
                     Container(
@@ -109,21 +112,21 @@ class Message extends StatelessWidget {
                         children: <Widget>[
                           Container(
                             margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: Text('Chandler Bing',
+                            child: Text('ATM Machine Near You!',
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
                                     fontFamily: 'Poppins Bold',
-                                    fontSize: 20,
+                                    fontSize: 15,
                                     letterSpacing: 1,
                                     color: Color(0xFFB33140C))),
                           ),
                           Container(
                             margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: Text('Hey! Saw you at the mall earlier!',
+                            child: Text('I just found an ATM 50 meters near you.',
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
                                     fontFamily: 'Poppins Regular',
-                                    fontSize: 12,
+                                    fontSize: 10,
                                     letterSpacing: 1,
                                     color: Color.fromARGB(250, 128, 128, 128))),
                           ),
@@ -145,7 +148,73 @@ class Message extends StatelessWidget {
                 )),
             Divider(
               color: Color(0xFFB757575),
-              thickness: .5,
+              height: 0,
+              indent: 0,
+              thickness: .2,
+            ),
+
+            Card(
+                color: Colors.transparent,
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(
+                    width: 330,
+                    color: Theme.of(context).colorScheme.outline,
+                  ),
+                  borderRadius: const BorderRadius.all(Radius.circular(3)),
+                ),
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: Image.asset("assets/images/exitLogo.png",
+                          width: 60, height: 60, fit: BoxFit.cover),
+                    ),
+                    Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Container(
+                            margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                            child: Text('Exit Found Near You.',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    fontFamily: 'Poppins Bold',
+                                    fontSize: 15,
+                                    letterSpacing: 1,
+                                    color: Color(0xFFB33140C))),
+                          ),
+                          Container(
+                            margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                            child: Text('I just found an Exit 20 meters near you.',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    fontFamily: 'Poppins Regular',
+                                    fontSize: 10,
+                                    letterSpacing: 1,
+                                    color: Color.fromARGB(250, 128, 128, 128))),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                        padding: const EdgeInsets.only(left: 25, top: 10),
+                        child: Text(
+                          '30m ago',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                              fontFamily: 'Poppins Bold',
+                              fontSize: 10,
+                              letterSpacing: 1,
+                              color: Color(0xFFB33140C)),
+                        )),
+                  ],
+                )),
+            Divider(
+              color: Color(0xFFB757575),
+              height: 0,
+              indent: 0,
+              thickness: .2,
             ),
             Card(
                 elevation: 0,
@@ -158,7 +227,8 @@ class Message extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Container(
-                      child: Image.asset("assets/images/msgProfile3.jpeg",
+                      margin: const EdgeInsets.only(top: 0),
+                      child: Image.asset("assets/images/dominosLogo.jpeg",
                           width: 60, height: 60, fit: BoxFit.cover),
                     ),
                     Container(
@@ -168,21 +238,21 @@ class Message extends StatelessWidget {
                           Container(
                             color: Theme.of(context).colorScheme.outline,
                             margin: const EdgeInsets.fromLTRB(10, 20, 0, 0),
-                            child: Text('Jane Doe',
+                            child: Text('P5 Deal Purchase Promo!',
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
                                     fontFamily: 'Poppins Bold',
-                                    fontSize: 20,
+                                    fontSize: 15,
                                     letterSpacing: 1,
                                     color: Color(0xFFB33140C))),
                           ),
                           Container(
                             margin: const EdgeInsets.fromLTRB(10, 0, 0, 20),
-                            child: Text('What did you buy?',
+                            child: Text('What are you waiting for? Buy now!',
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
                                     fontFamily: 'Poppins Regular',
-                                    fontSize: 12,
+                                    fontSize: 10,
                                     letterSpacing: 1,
                                     color: Color.fromARGB(250, 128, 128, 128))),
                           ),
@@ -190,28 +260,19 @@ class Message extends StatelessWidget {
                       ),
                     ),
                     Container(
-                        padding: const EdgeInsets.only(left: 125, top: 10),
+                        padding: const EdgeInsets.only(left: 55, top: 10),
                         child: Text(
-                          '2d ago',
+                          '1h ago',
                           textAlign: TextAlign.right,
                           style: TextStyle(
                               fontFamily: 'Poppins Regular',
-                              fontSize: 10,
+                              fontSize: 9,
                               letterSpacing: 1,
                               color: Color(0xFFB33140C)),
                         )),
                   ],
                 )),
           ])),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      floatingActionButton: new FloatingActionButton(
-        backgroundColor: Color(0xFFBAA1945),
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: Icon(
-          Icons.add,
-        ),
-      ),
     );
   }
 }
