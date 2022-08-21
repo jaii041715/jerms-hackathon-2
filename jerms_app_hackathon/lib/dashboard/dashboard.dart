@@ -25,9 +25,6 @@ class Dashboard extends StatelessWidget {
     return Scaffold
     (
       appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Color(0xFFBAA1945), //change your color here
-        ),
         backgroundColor: _color,
         title: const Text(
           'Home',
@@ -40,7 +37,7 @@ class Dashboard extends StatelessWidget {
       ),
       body: Container
       (
-        padding: EdgeInsets.fromLTRB(30, 30, 30, max(58, 58)),
+        padding: EdgeInsets.fromLTRB(10, 30, 10, max(58, 58)),
         width: double.infinity,
         decoration: BoxDecoration(color: Color(0xFFBFFF7EB)),
         child: Column
@@ -109,7 +106,7 @@ class Dashboard extends StatelessWidget {
             // Dashboard Search
             Container
             (
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+              padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
               child: TextField
               (
                 textAlign: TextAlign.left,
@@ -170,11 +167,13 @@ class Dashboard extends StatelessWidget {
                       ),
                       borderRadius: const BorderRadius.all(Radius.circular(3)),
                     ),
-                    child: Image.asset("assets/images/backToSchool.jpeg",
-                      width: 600,
-                      height: 100,
-                      fit: BoxFit.cover
-                    ),
+                    child: Column(children: [
+                      Image.asset("assets/images/backToSchool.jpeg",
+                        width: 500,
+                        height: 100,
+                        fit: BoxFit.cover
+                      ),
+                    ]),
                   ),
               ],
               options: CarouselOptions(
@@ -190,29 +189,185 @@ class Dashboard extends StatelessWidget {
               
             ),
 
+            CarouselSlider(
+              items: [
+                 Text(
+                    "-",
+                    style: TextStyle(
+                      color: Color(0xFFBAA1945)
+                    )
+                  ),
+
+                 Text(
+                    "-"
+                  ),
+
+              ],
+              options: CarouselOptions(
+                enlargeCenterPage: true,
+                autoPlay: true,
+                aspectRatio: 16 / 1,
+                autoPlayCurve: Curves.fastOutSlowIn,
+                enableInfiniteScroll: true,
+                autoPlayAnimationDuration: Duration(milliseconds: 200),
+                viewportFraction: 0.8,
+              ),
+              
+            ),
+
             //Are you here?
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Are you here?',
-                textAlign: TextAlign.left,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontSize: 15.0 ,
-                  fontFamily: 'Poppins Medium',
-                  letterSpacing: 2,
-                  color: Colors.black
+            Container(
+              margin: const EdgeInsets.fromLTRB(0, 15, 15, 0),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Are you here?',
+                  textAlign: TextAlign.left,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 16.0 ,
+                    fontFamily: 'Poppins Medium',
+                    letterSpacing: 1.5,
+                    color: Colors.black
+                  ),
                 ),
               ),
             ),
-            
+           
 
-            Container
-            (
-              margin: EdgeInsets.symmetric(vertical: 7.0),
-              height: 100.0,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
+
+            // Current Mall You're In
+            Card (
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  width: 330,
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(3)),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                      child: Image.asset("assets/images/Mall1.jpg",
+                        width: 200,
+                        height: 130,
+                        fit: BoxFit.cover
+                      ),
+                  ),
+
+                  Container(
+                    child: Column(
+                      children: <Widget>[
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Container(
+                            child: Text('Mall 1',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontFamily: 'Poppins Regular',
+                                fontSize: 13,
+                                color: Color(0xFFB757575)
+                              )
+                            ),
+                          ),
+                        ),
+                        
+                        Container(
+                          margin: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+                          child: Text('Description',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: 'Poppins Regular',
+                              fontSize: 11,
+                              color: Color.fromARGB(250, 128, 128, 128)
+                            )
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.fromLTRB(15, 15, 10, 2),
+                          height: 30,
+                          decoration: BoxDecoration(
+                          color: Color(0xFFBAA1945),
+                            borderRadius: BorderRadius.circular(3)
+                          ),
+                          child: TextButton
+                          (
+                            onPressed: (){
+                              Navigator.push
+                              (
+                                context, MaterialPageRoute
+                                (
+                                  builder: (context) => const StartNavigating()
+                                )
+                              );
+                            },
+                            child: Text("START NAVIGATING",
+                            style: TextStyle
+                              (
+                                color: Colors.white,
+                                fontSize: 9,
+                                fontFamily: 'Poppins Medium',
+                                letterSpacing: 2,
+                              )
+                            )
+                          )
+                        ),
+
+                        Container(
+                          child: TextButton
+                          ( 
+                            onPressed: (){
+                              Navigator.push
+                              (
+                                context, MaterialPageRoute
+                                (
+                                  builder: (context) => const MallInfo()
+                                )
+                              );
+                            },
+                            child: Text("CHECK MALL INFO",
+                            style: TextStyle
+                              (
+                                color: Color(0xFFBAA1945),
+                                fontSize: 9,
+                                fontFamily: 'Poppins Medium',
+                                letterSpacing: 2,
+                              )
+                            )
+                          )
+                        ),
+                      ],
+                    ),
+                  ),
+                  
+                ]
+              )
+            ),
+
+            // Malls near you
+            Container(
+              margin: const EdgeInsets.fromLTRB(0, 15, 15, 0),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Malls near you',
+                  textAlign: TextAlign.left,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 16.0 ,
+                    fontFamily: 'Poppins Medium',
+                    letterSpacing: 1.5,
+                    color: Colors.black
+                  ),
+                ),
+              ),
+            ),
+
+
+            Container(
+              child: Row(
                 children: <Widget>[
                   Card
                   (
@@ -221,11 +376,17 @@ class Dashboard extends StatelessWidget {
                       side: BorderSide(
                         color: Theme.of(context).colorScheme.outline,
                       ),
-                      borderRadius: const BorderRadius.all(Radius.circular(12)),
+                      borderRadius: const BorderRadius.all(Radius.circular(3)),
                     ),
-                    child: Image.asset("assets/images/bagSale.jpg", width: 165, height: 180,),
+                    child: Column(children: [
+                      Image.asset("assets/images/mallnearyou1.jpeg",
+                        width: 175,
+                        height: 100,
+                        fit: BoxFit.cover
+                      ),
+                    ]),
                   ),
-                    
+
                   Card
                   (
                     elevation: 0,
@@ -233,65 +394,24 @@ class Dashboard extends StatelessWidget {
                       side: BorderSide(
                         color: Theme.of(context).colorScheme.outline,
                       ),
-                      borderRadius: const BorderRadius.all(Radius.circular(12)),
+                      borderRadius: const BorderRadius.all(Radius.circular(3)),
                     ),
-                    child: const SizedBox(
-                      width: 165,
-                      height: 180,
-                      child: Center(
-                        child: Text("Start Navigating \n\n" + "Show Mall Info",
-                          style: TextStyle(
-                            fontSize: 13.0 ,
-                            fontFamily: 'Poppins Medium',
-                            letterSpacing: 2,
-                            color: Color(0xFFBAA1945),
-                          ),
-                        )
+                    child: Column(children: [
+                      Image.asset("assets/images/mallnearyou2.jpeg",
+                        width: 175,
+                        height: 100,
+                        fit: BoxFit.cover
                       ),
-                    ),
+                    ]),
                   ),
+
                 ],
               )
             ),
-              
-              // Start Navigating
-              ElevatedButton
-              (
-                onPressed: () {
-                  Navigator.push(context,
-                    MaterialPageRoute(
-                      builder: (context) => const StartNavigating()
-                    )
-                  );
-                }, child: const Text('Start Navigating'),
-              ),  
 
-              // Check Mall Info
-              ElevatedButton
-              (
-                onPressed: () {
-                  Navigator.push(context,
-                    MaterialPageRoute(
-                      builder: (context) => const MallInfo()
-                    )
-                  );
-                }, child: const Text('Check Mall Info'),
-              ),  
-
-              // View Map
-              ElevatedButton
-              (
-                onPressed: () {
-                  Navigator.push(context,
-                    MaterialPageRoute(
-                      builder: (context) => const SetLocation()
-                    )
-                  );
-                }, child:  const Text('Update Set Location'),
-              )
           ]
         )
-      ),
+      )
     );
   }
 }
