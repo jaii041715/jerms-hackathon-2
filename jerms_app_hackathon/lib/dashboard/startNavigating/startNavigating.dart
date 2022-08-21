@@ -63,10 +63,21 @@ class _StartNavigatingState extends State<StartNavigating> {
 
   @override
   Widget build(BuildContext context) {
+    Color _color = const Color(0xFFBFFF7EB);
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Start Navigating'),
-      ),
+
+        appBar: AppBar(
+          backgroundColor: _color,
+          title: const Text(
+            'Start Navigating',
+            style: TextStyle(
+                fontSize: 16.0,
+                fontFamily: 'Poppins Medium',
+                color: Colors.black,
+                letterSpacing: 1),
+          ),
+          centerTitle: true,
+        ),
       body: Stack(
         children: <Widget>[
         Positioned.fill(

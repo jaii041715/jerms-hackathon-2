@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jerms_app_hackathon/dashboard/dashboard.dart';
+import 'package:jerms_app_hackathon/dashboard/startNavigating/startNavigating.dart';
 import 'package:jerms_app_hackathon/message/message.dart';
 import 'package:jerms_app_hackathon/notes/notes.dart';
+import 'package:jerms_app_hackathon/setLocation/setLocation.dart';
 import 'package:jerms_app_hackathon/social/social.dart';
 import 'package:jerms_app_hackathon/discover/discover.dart';
 
@@ -63,7 +65,7 @@ class BottomNavBarState extends State<BottomNavBar> {
       case 1:
         return Social(); // Create this function, it should return your second page as a widget
       case 2:
-        return Discover(); // Create this function, it should return your third page as a widget
+        return StartNavigating(); // Create this function, it should return your third page as a widget
       case 3:
         return Message(); // Create this function, it should return your third page as a widget
       case 4:
