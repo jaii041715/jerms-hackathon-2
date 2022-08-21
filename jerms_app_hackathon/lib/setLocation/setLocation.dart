@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:location/location.dart';
@@ -152,7 +154,8 @@ class _SetLocationState extends State<SetLocation> {
                             children: [
                               Text("Radius",style: TextStyle(fontWeight: FontWeight.bold),),
                               Container(
-                                width: 300.0,
+                                padding: EdgeInsets.fromLTRB(0, 0, 0, max(0, 0)),
+                                width: 287.0,
                                 child: Slider(value: rating, onChanged: (newRating){
                                       setState(() {
                                         rating = newRating;
