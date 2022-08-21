@@ -25,6 +25,7 @@ class Dashboard extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: _color,
         title: Text(
           'Home',
