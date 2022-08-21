@@ -100,6 +100,7 @@ class Message extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Container(
+                      padding: const EdgeInsets.only(bottom: 8),
                       child: Image.asset("assets/images/chandler.jpg",
                           width: 60, height: 60, fit: BoxFit.cover),
                     ),
@@ -145,7 +146,9 @@ class Message extends StatelessWidget {
                 )),
             Divider(
               color: Color(0xFFB757575),
-              thickness: .5,
+              height: 0,
+              indent: 0,
+              thickness: .2,
             ),
             Card(
                 elevation: 0,
@@ -158,6 +161,7 @@ class Message extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Container(
+                      margin: const EdgeInsets.only(top: 0),
                       child: Image.asset("assets/images/msgProfile3.jpeg",
                           width: 60, height: 60, fit: BoxFit.cover),
                     ),
