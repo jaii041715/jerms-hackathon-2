@@ -269,7 +269,7 @@ class MallInfo extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const NavigateMallBluePrint()));
+                        builder: (context) => const StartNavigating()));
                 // Navigate back to first route when tapped.
               },
               child: Container(
