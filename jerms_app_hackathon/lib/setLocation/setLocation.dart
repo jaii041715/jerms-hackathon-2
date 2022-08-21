@@ -187,7 +187,7 @@ class _SetLocationState extends State<SetLocation> {
                 left: 17,
                 right: 17,
                 child: Container(
-                  child: TextButton(
+                child: TextButton(
                     onPressed: () {
                       Navigator.push(
                           context,
