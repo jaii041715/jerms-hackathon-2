@@ -67,9 +67,9 @@ class Dashboard extends StatelessWidget {
                       },
                       child: Text('G',
                           style: TextStyle(
+                            fontFamily: 'Poppins Regular',
                             fontSize: 25.0,
-                            letterSpacing: 2,
-                            color: Colors.white,
+                            color: Color(0xFFBF9E9D0),
                           )),
                     )
                   ]),
@@ -82,14 +82,19 @@ class Dashboard extends StatelessWidget {
                               fontFamily: 'Poppins Bold',
                               letterSpacing: 2,
                               color: Colors.black),
-                          text: ' Hi, Guest!\n',
+                          text: '  Hi, Guest!\n',
                           children: [
+                            WidgetSpan(
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                              ),
+                            ),
                             TextSpan(
                               style: TextStyle(
                                   fontSize: 20.0,
                                   fontFamily: 'Poppins Medium',
                                   color: Colors.black),
-                              text: ' Find a Mall near you',
+                              text: 'Find a Mall near you',
                             ),
                           ],
                         ),
@@ -171,7 +176,8 @@ class Dashboard extends StatelessWidget {
 
             CarouselSlider(
               items: [
-                Text("-", style: TextStyle(color: Color(0xFFBAA1945))),
+                Text("-",
+                    style: TextStyle(fontSize: 200, color: Color(0xFFBAA1945))),
                 Text("-"),
               ],
               options: CarouselOptions(
@@ -238,7 +244,7 @@ class Dashboard extends StatelessWidget {
                             ),
                             Container(
                               margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                              child: Text('Description',
+                              child: Text('Open until 10:00 PM',
                                   style: TextStyle(
                                       fontFamily: 'Poppins Regular',
                                       fontSize: 13,
@@ -290,19 +296,37 @@ class Dashboard extends StatelessWidget {
 
             // Malls near you
             Container(
-              margin: const EdgeInsets.fromLTRB(4, 15, 15, 0),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Malls Near You',
-                  textAlign: TextAlign.left,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                      fontSize: 20.0,
-                      fontFamily: 'Poppins Medium',
-                      letterSpacing: 1.5,
-                      color: Colors.black),
-                ),
+              margin: const EdgeInsets.fromLTRB(5, 10, 0, 10),
+              child: Row(
+                children: <Widget>[
+                  Text(
+                    'Malls Near You',
+                    textAlign: TextAlign.left,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        fontFamily: 'Poppins Medium',
+                        letterSpacing: 1.5,
+                        color: Colors.black),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 110, top: 2),
+                    child: Row(
+                      children: <Widget>[
+                        Text('4.5 mi',
+                            textAlign: TextAlign.end,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                fontSize: 10.0,
+                                fontFamily: 'Poppins Medium',
+                                letterSpacing: 1.5,
+                                color: Color(0xFFBAA1945))),
+                        Icon(Icons.edit, color: Color(0xFFBAA1945), size: 12.0),
+                      ],
+                    ),
+                  )
+                ],
               ),
             ),
 
@@ -319,23 +343,42 @@ class Dashboard extends StatelessWidget {
                   ),
                   child: Column(children: [
                     Image.asset("assets/images/mallnearyou1.jpeg",
-                        width: 168, height: 150, fit: BoxFit.cover),
+                        width: 160, height: 80, fit: BoxFit.cover),
+                    Container(
+                      margin: const EdgeInsets.only(left: 10, top: 10),
+                      height: 50,
+                      width: 160,
+                      child: Text("Mall 1\nDescription",
+                          style: TextStyle(
+                              fontFamily: 'Poppins Regular',
+                              fontSize: 15,
+                              color: Color(0xFFB343434))),
+                    )
                   ]),
                 ),
                 Card(
-                  margin: const EdgeInsets.only(left: 8),
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                      color: Theme.of(context).colorScheme.outline,
+                    margin: const EdgeInsets.only(left: 0),
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        color: Theme.of(context).colorScheme.outline,
+                      ),
+                      borderRadius: const BorderRadius.all(Radius.circular(3)),
                     ),
-                    borderRadius: const BorderRadius.all(Radius.circular(3)),
-                  ),
-                  child: Column(children: [
-                    Image.asset("assets/images/mallnearyou2.jpeg",
-                        width: 168, height: 150, fit: BoxFit.cover),
-                  ]),
-                ),
+                    child: Column(children: [
+                      Image.asset("assets/images/mallnearyou2.jpeg",
+                          width: 160, height: 80, fit: BoxFit.cover),
+                      Container(
+                        margin: const EdgeInsets.only(left: 10, top: 10),
+                        height: 50,
+                        width: 160,
+                        child: Text("Mall 2\nDescription",
+                            style: TextStyle(
+                                fontFamily: 'Poppins Regular',
+                                fontSize: 15,
+                                color: Color(0xFFB343434))),
+                      ),
+                    ])),
               ],
             )),
           ]))),
