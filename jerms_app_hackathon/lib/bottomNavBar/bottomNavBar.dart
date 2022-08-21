@@ -5,7 +5,6 @@ import 'package:jerms_app_hackathon/notes/notes.dart';
 import 'package:jerms_app_hackathon/social/social.dart';
 import 'package:jerms_app_hackathon/discover/discover.dart';
 
-
 class BottomNavBar extends StatefulWidget {
   @override
   BottomNavBarState createState() {
@@ -56,7 +55,7 @@ class BottomNavBarState extends State<BottomNavBar> {
       ),
     );
   }
-  
+
   Widget _getBody(int index) {
     switch (index) {
       case 0:
@@ -66,12 +65,14 @@ class BottomNavBarState extends State<BottomNavBar> {
       case 2:
         return Discover(); // Create this function, it should return your third page as a widget
       case 3:
-        return Message();  // Create this function, it should return your third page as a widget
+        return Message(); // Create this function, it should return your third page as a widget
       case 4:
         return Notes(); // Create this function, it should return your fourth page as a widget
     }
 
-    return Center(child: Text("There is no page builder for this index."),);
+    return Center(
+      child: Text("There is no page builder for this index."),
+    );
   }
 }
 
@@ -85,17 +86,10 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
 
-
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      final screen = [
-        Dashboard(),
-        Social(),
-        Discover(),
-        Message(),
-        Notes()
-      ];
+      final screen = [Dashboard(), Social(), Discover(), Message(), Notes()];
     });
   }
 
@@ -110,7 +104,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             icon: Icon(Icons.home_outlined),
             label: 'Home',
             backgroundColor: Colors.red,
-            
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.people_alt_outlined),

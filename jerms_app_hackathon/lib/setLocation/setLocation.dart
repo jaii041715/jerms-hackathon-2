@@ -84,7 +84,8 @@ class _SetLocationState extends State<SetLocation> {
             style: TextStyle(
                 color: Color(0xFFB322E2E),
                 fontFamily: 'Poppins Semi Bold',
-                fontSize: 16),
+                fontSize: 16,
+                letterSpacing: 1),
           ),
           centerTitle: true,
         ),
@@ -187,7 +188,7 @@ class _SetLocationState extends State<SetLocation> {
                 left: 17,
                 right: 17,
                 child: Container(
-                child: TextButton(
+                  child: TextButton(
                     onPressed: () {
                       Navigator.push(
                           context,
