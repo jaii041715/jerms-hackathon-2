@@ -2,12 +2,17 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:jerms_app_hackathon/bottomNavBar/bottomNavBar.dart';
 
 import 'package:jerms_app_hackathon/dashboard/accountSettings/accountSettings.dart';
 import 'package:jerms_app_hackathon/dashboard/startNavigating/mallInfo/mallInfo.dart';
 import 'package:jerms_app_hackathon/dashboard/startNavigating/startNavigating.dart';
+import 'package:jerms_app_hackathon/discover/discover.dart';
 import 'package:jerms_app_hackathon/login/login.dart';
+import 'package:jerms_app_hackathon/notes/notes.dart';
 import 'package:jerms_app_hackathon/setLocation/setLocation.dart';
+import 'package:jerms_app_hackathon/social/social.dart';
+import 'package:jerms_app_hackathon/message/message.dart';
 
 void main() {
   runApp(const Dashboard());
@@ -19,6 +24,9 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color _color = const Color(0xFFBFFF7EB);
+
+
+    
     return Scaffold(
       appBar: AppBar(
         backgroundColor: _color,
@@ -333,4 +341,6 @@ class Dashboard extends StatelessWidget {
           ]))),
     );
   }
+  
+  setState(Null Function() param0) {}
 }

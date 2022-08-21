@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:jerms_app_hackathon/bottomNavBar/bottomNavBar.dart';
 import 'package:location/location.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
@@ -191,7 +192,7 @@ class _SetLocationState extends State<SetLocation> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const Dashboard()));
+                              builder: (context) => BottomNavBar()));
                       // Navigate back to first route when tapped.
                     },
                     child: Container(

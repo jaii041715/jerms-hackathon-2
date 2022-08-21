@@ -24,38 +24,6 @@ class Notes extends StatelessWidget {
             child: const Text('Go to Dashboard'),
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Color(0xFFBFFFFFF),
-          selectedItemColor: Color(0xFFBAA1945),
-          unselectedItemColor: Color.fromARGB(255, 56, 56, 56),
-          type: BottomNavigationBarType.fixed, // Fixed
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined),
-              label: 'Home',
-              backgroundColor: Colors.red,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.people_alt_outlined),
-              label: 'Social',
-              backgroundColor: Colors.green,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.explore),
-              label: 'Discover',
-              backgroundColor: Colors.purple,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.message_outlined),
-              label: 'Message',
-              backgroundColor: Colors.pink,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.event_note_outlined),
-              label: 'Notes',
-              backgroundColor: Colors.pink,
-            ),
-          ],
-        ));
+    );
   }
 }
