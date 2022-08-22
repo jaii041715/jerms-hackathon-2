@@ -143,10 +143,6 @@ class Message extends StatelessWidget {
                         )),
                   ],
                 )),
-            Divider(
-              color: Color(0xFFB757575),
-              thickness: .5,
-            ),
             Card(
                 elevation: 0,
                 shape: RoundedRectangleBorder(
