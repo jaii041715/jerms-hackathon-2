@@ -25,7 +25,11 @@ class StartNavigating extends StatefulWidget {
   State<StartNavigating> createState() => _StartNavigatingState();
 }
 
-class _StartNavigatingState extends State<StartNavigating> {
+class _StartNavigatingState extends State<StartNavigating> with TickerProviderStateMixin{
+  late final AnimationController _controller = AnimationController(
+    duration: const Duration(seconds: 2),
+    vsync: this,
+  )..repeat(reverse: true);
   late GoogleMapController mapController;
   final LatLng _center = const LatLng(45.521563, -122.677433);
   late BitmapDescriptor sourceIcon;
@@ -64,9 +68,16 @@ class _StartNavigatingState extends State<StartNavigating> {
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     Color _color = const Color(0xFFBFFFFFF);
-
+    const double smallLogo = 100;
+    const double bigLogo = 200;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -105,7 +116,11 @@ class _StartNavigatingState extends State<StartNavigating> {
               )),
               Positioned.fill(child: Container(child: Image.asset("assets/images/blueprint.png",
                       width: 500, fit: BoxFit.cover),)),
-              
+              Positioned(top:-300,right:0,left:-200,bottom:0,child: Container(child: Icon(Icons.location_on,size: 40,color: Color.fromARGB(255, 155, 10, 0),),),),
+              Positioned(top:550,right:0,left:80,bottom:0,child: CustomPaint(
+                painter: ShapePainter(),
+                child: Container(),
+              ),),
               Positioned(
                 top: 0,
                 left: 0,
@@ -147,6 +162,7 @@ class _StartNavigatingState extends State<StartNavigating> {
                       ],
                     )),
               ),
+              
               Positioned(
                 bottom: 10,
                 left: 0,
@@ -154,10 +170,7 @@ class _StartNavigatingState extends State<StartNavigating> {
                 child: Container(
                   child: TextButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => BottomNavBar()));
+                      
                       // Navigate back to first route when tapped.
                     },
                     child: Container(
@@ -186,6 +199,8 @@ class _StartNavigatingState extends State<StartNavigating> {
     );
   }
 
+  
+
   Future _initLocationService() async {
     var location = Location();
 
@@ -205,5 +220,50 @@ class _StartNavigatingState extends State<StartNavigating> {
 
     var loc = await location.getLocation();
     debugPrint("${loc.latitude} ${loc.longitude}");
+  }
+}
+class ShapePainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    var paint = Paint()
+      ..color = Color.fromARGB(255, 155, 10, 0)
+      ..strokeWidth = 5
+      ..strokeCap = StrokeCap.square;
+
+    Offset startingPoint = Offset(50, 50.0);
+    Offset endingPoint = Offset(50, 50.0 / 2);
+
+    var cirPaint = Paint()
+      ..color = Color.fromARGB(255, 155, 10, 0)
+      ..strokeWidth = 1
+      ..style = PaintingStyle.fill
+      ..strokeCap = StrokeCap.round;
+    var cirPaintPaint = Paint()
+      ..color = Color.fromARGB(58, 252, 84, 72)
+      ..strokeWidth = 1
+      ..style = PaintingStyle.fill
+      ..strokeCap = StrokeCap.round;
+
+    Offset center = Offset(50, 50);
+
+    canvas.drawCircle(center, 5, cirPaint);
+    canvas.drawCircle(center, 10, cirPaintPaint);
+    canvas.drawLine(startingPoint, endingPoint, paint);
+    startingPoint = Offset(50, 50.0 / 2);
+    endingPoint = Offset(100, 50.0 / 2);
+    canvas.drawLine(startingPoint, endingPoint, paint);
+    startingPoint = Offset(100, 20);
+    endingPoint = Offset(100, -325);
+    canvas.drawLine(startingPoint, endingPoint, paint);
+    startingPoint = Offset(40, -325);
+    endingPoint = Offset(100, -325);
+    canvas.drawLine(startingPoint, endingPoint, paint);
+    
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    // TODO: implement shouldRepaint
+    return false;
   }
 }
